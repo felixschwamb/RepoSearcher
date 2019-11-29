@@ -1,0 +1,163 @@
+/* Colors:
+main color (blue): #3f51b5
+second color (grey): #616161
+border color (light grey): #e0e0e0 
+
+button:
+  main: #3f51b5
+  main.color: white
+  hover color (dark blue) : #1a237e
+*/
+
+
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+h1 {
+  margin: 20px 0 40px 0;
+  font-size: 24px;
+}
+
+.cont_column {
+  display: flex;
+  flex-direction: column;
+}
+
+.cont_row {
+  display: flex;
+  flex-direction: row;
+}
+
+.cont_header {
+  align-items: center;
+}
+
+.cont_searchInput_content {
+  align-items: center;
+}
+
+input {
+  padding: 5px;
+  height: 40px;
+  width: 80%;
+  border-color: #e0e0e0;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.input_message {
+  align-items: center;
+  margin-top: 20px;
+}
+
+button {
+  height: 40px;
+  width: 80%;
+  margin-top: 20px;
+  font-size: 16px;
+  background-color: #3f51b5;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #1a237e;
+}
+
+.cont_navBar {
+  margin-top: 20px;
+  width: 80%;
+  justify-content: flex-end;
+  align-self: center;
+}
+
+.element_navBar {
+  font-weight: bold;
+  color: #3f51b5;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.element_navBar:hover {
+  color: #1a237e;
+}
+
+.element_left {
+  margin-right: 20px;
+}
+
+.cont_numResults {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 20px;
+  align-self: center;
+  width: 80%;
+}
+
+.cont_repoList {
+  display: flex;
+  flex-direction: column;
+}
+
+#repoList {
+  margin-top: 10px;
+  align-items: center;
+}
+
+.cont_repoElement {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 75px;
+  width: 80%;
+  padding: 0 5px;
+  font-size: 16px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.cont_repoContent {
+  width: 100%;
+  margin-left: 20px;
+}
+
+.icon_bookmark {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.icon_bookmark.active {
+  color: #3f51b5
+}
+
+.icon_bookmark.inactive {
+  color: #616161
+}
+
+.content_repoName {
+  font-weight: bold;
+  color: #3f51b5;
+}
+
+.content_repoSubline {
+  justify-content: space-between;
+  font-size: 14px;
+  margin-top: 5px;
+  color: #616161;
+}
+
+.icon_star {
+  margin-right: 5px;
+  color: black
+}
