@@ -1,7 +1,6 @@
 const express = require("express");
-const path = require("path");
 
-const getDataByName = require("./callGitHub");
+const getDataByName = require("./middleware/repoData");
 const bookmarkData = require("./bookmarkData");
 
 const app = express();
@@ -11,18 +10,15 @@ app.use(express.json());
 
 // // Endpoints
 // // Get all reservations
-app.get("/repos/:repoName", async (req, res) => {
+app.get("/api/repositories/:name", getDataByName, async (req, res) => {
 	try {
-		const repoName = req.params.repoName;
-		const data = await getDataByName(repoName);
-
-		res.status(200).send(data);
+		res.status(200).send(req.data);
 	} catch (e) {
 		res.status(500).send();
 	}
 });
 
-app.get("/bookmarks", async (req, res) => {
+app.get("/api/bookmarks", async (req, res) => {
 	try {
 		res.status(200).send(bookmarkData);
 	} catch (e) {
@@ -30,7 +26,7 @@ app.get("/bookmarks", async (req, res) => {
 	}
 });
 
-app.post("/bookmarks", async (req, res) => {
+app.post("/api/bookmarks", async (req, res) => {
 	try {
 		const data = req.body;
 		bookmarkData.push(data);
@@ -41,7 +37,7 @@ app.post("/bookmarks", async (req, res) => {
 	}
 });
 
-app.delete("/bookmarks/:id", async (req, res) => {
+app.delete("/api/bookmarks/:id", async (req, res) => {
 	try {
 		const id = Number(req.params.id);
 		const index = bookmarkData.findIndex(item => {

@@ -10,7 +10,7 @@ export class Bookmarks extends Component {
 	componentDidMount = () => {
 		const total_count = this.props.bookmarkState.length;
 		if (total_count === 0) {
-			const url = "/bookmarks/";
+			const url = "/api/bookmarks/";
 			this.props.fetchData(url, "bookmark");
 		}
 	};

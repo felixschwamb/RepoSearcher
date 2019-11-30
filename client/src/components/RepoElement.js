@@ -29,7 +29,7 @@ export class RepoElement extends Component {
 	};
 
 	bookmarkActionAdd = () => {
-		this.props.postOne("/bookmarks", this.props.repo);
+		this.props.postOne("/api/bookmarks", this.props.repo);
 		this.setState({
 			bookmark: true
 		});
@@ -37,7 +37,7 @@ export class RepoElement extends Component {
 
 	bookmarkActionRemove = () => {
 		const id = this.props.repo.id;
-		const url = `/bookmarks/${id}`;
+		const url = `/api/bookmarks/${id}`;
 		this.props.deleteOne(url, id);
 		this.setState({
 			bookmark: false

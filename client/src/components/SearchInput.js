@@ -46,7 +46,7 @@ export class SearchInput extends Component {
 
 		const check = this.validateInput();
 		if (check) {
-			const url = "/repos/" + this.state.search;
+			const url = "/api/repositories/" + this.state.search;
 
 			this.props.fetchData(url, "repo");
 
