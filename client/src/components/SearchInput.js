@@ -72,19 +72,21 @@ export class SearchInput extends Component {
 		}
 
 		return (
-			<div id="searchInput" className="cont_column">
-				<div className="cont_searchInput_content cont_column">
-					<input
-						type="text"
-						name="search"
-						placeholder="Enter repo name"
-						value={this.state.search}
-						onChange={this.onChange}
-						onFocus={this.clearSearch}
-					></input>
-				</div>
-				<div className="cont_searchInput_content cont_column">
-					<button onClick={this.sendSearch}>Search</button>
+			<div>
+				<div className="cont_searchInput">
+					<div className="cont_column cont_searchInput_content">
+						<input
+							type="text"
+							name="search"
+							placeholder="Enter repo name"
+							value={this.state.search}
+							onChange={this.onChange}
+							onFocus={this.clearSearch}
+						></input>
+					</div>
+					<div className="cont_searchInput_content cont_column">
+						<button onClick={this.sendSearch}>Search</button>
+					</div>
 				</div>
 				{infoMessage}
 			</div>
