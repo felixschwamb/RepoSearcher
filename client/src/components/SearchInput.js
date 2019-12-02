@@ -22,6 +22,10 @@ export class SearchInput extends Component {
 		});
 	};
 
+	handleKeyUp = (e) => {
+		if (e.keyCode === 13) return this.sendSearch(e)
+	}
+
 	clearSearch = () => {
 		this.setState({
 			search: ""
@@ -82,6 +86,7 @@ export class SearchInput extends Component {
 							value={this.state.search}
 							onChange={this.onChange}
 							onFocus={this.clearSearch}
+							onKeyUp={this.handleKeyUp}
 						></input>
 					</div>
 					<div className="cont_searchInput_content cont_column">
