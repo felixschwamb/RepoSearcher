@@ -20,6 +20,7 @@ const repoState = (state = [], action) => {
 			return state;
 	}
 };
+
 const bookmarkState = (state = [], action) => {
 	switch (action.type) {
 		case FETCH_DATA_BOOKMARK_SUCCESS:
@@ -55,31 +56,11 @@ const errorState = (state = false, action) => {
 	}
 };
 
-// const reservationStateSingle = (state = {}, action) => {
-// 	switch (action.type) {
-// 		case DATA_FETCH_SUCCESS_SINGLE:
-// 			return action.payload;
-// 		default:
-// 			return state;
-// 	}
-// };
-
-// const availabilityState = (state = [], action) => {
-// 	switch (action.type) {
-// 		case AV_FETCH_SUCCESS:
-// 			return action.payload;
-// 		default:
-// 			return state;
-// 	}
-// };
-
 const reducer = combineReducers({
 	repoState,
 	bookmarkState,
 	loadingState,
 	errorState
-	// availabilityState,
-	// reservationStateSingle
 });
 
 export default reducer;

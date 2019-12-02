@@ -2,7 +2,6 @@ const fs = require("fs");
 const express = require("express");
 
 const getDataByName = require("./middleware/repoData");
-// const bookmarkData = require("./bookmarkData");
 
 const app = express();
 const port = process.env.PORT || 5000;
